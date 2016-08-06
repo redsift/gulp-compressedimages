@@ -7,6 +7,12 @@ var gulp = require('gulp'),
 
 var testOutput = '_out/';
 
+gulp.task('broken', function() {
+    return gulp.src('broken.jpg')
+        .pipe(photos.resampler({ iccProfile: '_out/srgb.icc' }))
+        .pipe(gulp.dest(testOutput));
+});
+
 gulp.task('webp', function() {
     return gulp.src('test-icc.jpg')
         .pipe(photos.resampler({ iccProfile: '_out/srgb.icc', size: 200, webp: true, suffix: '_d', quality: 50 }))
