@@ -12,7 +12,6 @@ checkout:
 dependencies:
   override:
     - npm install
-    - mv ./dist ${CIRCLE_ARTIFACTS}/dist
 
 test:
   override:
