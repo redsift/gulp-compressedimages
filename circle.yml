@@ -7,8 +7,18 @@ machine:
 
 checkout:
   pre:
-    - sudo apt-get install webp  
     - npm install -g npm
+    - |
+        cd /tmp
+        mkdir imagemagick
+        cd imagemagick
+        sudo apt-get update
+        sudo apt-get build-dep imagemagick
+        sudo apt-get install libwebp-dev devscripts
+        apt-get source imagemagick
+        cd imagemagick-*
+        debuild -uc -us
+        sudo dpkg -i ../*magick*.deb    
 
 dependencies:
   override:
