@@ -1,0 +1,39 @@
+{
+  "name": "@redsift/gulp-compressedimages",
+  "version": "0.0.1",
+  "description": "Photo compression gulp task.",
+  "keywords": [
+    "photo",
+    "image",
+    "gulp",
+    "redsift"
+  ],
+  "homepage": "https://github.com/redsift/gulp-compressedimages",
+  "license": "MIT",
+  "author": {
+    "name": "Rahul Powar",
+    "url": "https://medium.com/@rahulpowar"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redsift/gulp-compressedimages.git"
+  },
+  "scripts": {
+    "pretest": "npm outdated && npm run icc",
+    "lint": "eslint index.js",
+    "icc": "mkdir -p test/_out && curl -s -z test/_out/srgb.icc -o test/_out/srgb.icc http://www.color.org/sRGB_v4_ICC_preference.icc",
+    "test": "cd test && gulp && cd .. && npm run lint"
+  },
+  "dependencies": {
+    "gm": "^1.23.0",
+    "gulp-util": "^3.0.7",
+    "map-stream": "0.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "gulp": "^3.9.1",
+    "image-diff": "^1.6.3",
+    "merge-stream": "^1.0.0"
+  }
+}
