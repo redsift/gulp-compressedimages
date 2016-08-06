@@ -15,6 +15,7 @@ checkout:
         sudo apt-get update
         sudo apt-get build-dep imagemagick
         sudo apt-get install libwebp-dev devscripts
+        sudo apt-get update
         apt-get source imagemagick
         cd imagemagick-*
         debuild -uc -us
