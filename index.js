@@ -136,7 +136,7 @@ function resampler(opts) {
  
         imFile.toBuffer(function (err, buffer) {
           if (err) {
-            return done(new gutil.PluginError(PLUGIN_NAME, 'Could not process "' + file.path + '". ' + err));
+            return done(new gutil.PluginError(PLUGIN_NAME, 'Could not process "' + file.path + '" as a ' + imFile._outputFormat + '. ' + err));
           } else {
             if (imFile._outputFormat) {
               file.path = file.path.replace(path.extname(file.path), suffix + '.' + imFile._outputFormat);
