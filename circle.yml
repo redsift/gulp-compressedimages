@@ -13,7 +13,7 @@ checkout:
         mkdir imagemagick
         cd imagemagick
         curl http://redsift-static.s3.amazonaws.com/thirdparty/imagemagick/6.7.7/ubuntu-14.04/imagemagick-6.7.7.tar.bz2 | tar -xj
-        sudo dpkg -i *.deb
+        sudo dpkg -i imagemagick-common*.deb  imagemagick-doc*.deb libmagick*.deb 
  
 
 dependencies:
