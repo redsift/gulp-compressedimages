@@ -12,13 +12,9 @@ checkout:
         cd /tmp
         mkdir imagemagick
         cd imagemagick
-        sudo apt-get update
-        sudo apt-get install libwebp-dev devscripts
-        sudo apt-get build-dep imagemagick
-        apt-get source imagemagick
-        cd imagemagick-*
-        debuild -uc -us
-        sudo dpkg -i ../*magick*.deb    
+        curl http://redsift-static.s3.amazonaws.com/thirdparty/imagemagick/6.7.7/ubuntu-14.04/imagemagick-6.7.7.tar.bz2 | tar -xj
+        sudo dpkg -i *.deb
+ 
 
 dependencies:
   override:
