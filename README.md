@@ -8,9 +8,9 @@ Processes images with ImageMagick to resize and compress them carefully as JPEG 
 
 ## Installation
 
-`gulp-compressedimages` requires ImageMagick compiled with the jpeg, lcms and webp delegates.
+`gulp-compressedimages` requires ImageMagick (tested with ImageMagick 6.9.2) compiled with the jpeg, lcms and webp delegates.
 
-Verify this via `convert -version`.
+Verify this via `convert -version`. If you receive a `Stream yields empty buffer` error while reading or writing WEBP, most likely your ImageMagick binary was not built with WEBP support.
 
 Running the pipe will also typically require an sRGB ICC profile [downloaded locally](http://www.color.org/srgbprofiles.xalter) to correctly perform the color conversion.
 

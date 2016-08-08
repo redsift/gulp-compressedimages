@@ -8,11 +8,17 @@ machine:
 checkout:
   pre:
     - npm install -g npm
+    - |
+        cd /tmp
+        mkdir imagemagick
+        cd imagemagick
+        curl http://redsift-static.s3.amazonaws.com/thirdparty/imagemagick/6.7.7/ubuntu-14.04/imagemagick-6.7.7.tar.bz2 | tar -xj
+        sudo dpkg -i imagemagick-common*.deb  imagemagick-doc*.deb libmagick*.deb 
+ 
 
 dependencies:
   override:
     - npm install
-    - mv ./dist ${CIRCLE_ARTIFACTS}/dist
 
 test:
   override:
