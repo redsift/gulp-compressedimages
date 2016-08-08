@@ -47,7 +47,7 @@ gulp.task('validate', [ 'webp', 'gamma', 'common' ], function() {
     function (err, delta) {
         if (err) throw err;
 
-        if (delta.percentage > 0.01) {
+        if (delta.percentage > 0.02) {
             throw new Error('Transformed image did not match the reference image by ' + (delta.percentage * 100) + '%. Likely color management is not enabled in the Imagemagick binary');
         }
     });    
